@@ -2,7 +2,7 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 
   size?: "small" | "medium" | "large";
-  color?: "green" | "red" | "gray";
+  color?: "green" | "red" | "gray" | "blue";
   className?: string;
 }
 
@@ -23,6 +23,8 @@ export const Button = ({
           ? "bg-red-300 hover:bg-red-400 active:bg-red-500 focus:ring-red-600 focus:ring-opacity-50"
           : color === "green"
           ? "bg-green-300 hover:bg-green-400 active:bg-green-500 focus:ring-green-600 focus:ring-opacity-50"
+          : color === "blue"
+          ? "bg-blue-300 hover:bg-blue-400 active:bg-blue-500 focus:ring-blue-600 focus:ring-opacity-50"
           : ""
       }
       ${

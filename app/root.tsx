@@ -33,10 +33,12 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className='min-h-screen bg-sky-100 grid content-center align-middle justify-center'>
+      <body className='min-h-screen bg-sky-100 mt-12'>
         <div className='grid gap-8 justify-items-center'>
           <Title level='1'>Halvlitern</Title>
-          <Outlet />
+          <div>
+            <Outlet />
+          </div>
         </div>
         <ScrollRestoration />
         <Scripts />

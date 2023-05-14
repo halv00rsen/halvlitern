@@ -17,6 +17,8 @@ export const Question = ({ alternatives, question }: Props) => {
     []
   );
 
+  const [isAnswered, setIsAnswered] = useState(false);
+
   const isMultipleChoice =
     alternatives.filter((alternative) => alternative.correct).length > 1;
 
@@ -43,12 +45,28 @@ export const Question = ({ alternatives, question }: Props) => {
             key={alternative.text}
             onClick={() => toggleAlternative(alternative)}
             color={chosenAlternatives.includes(alternative) ? "green" : "gray"}
+            disabled={isAnswered}
           >
             {alternative.text}
           </Button>
         ))}
       </div>
-      <Button disabled={chosenAlternatives.length === 0}>Svar</Button>
+      <Button
+        disabled={chosenAlternatives.length === 0 || isAnswered}
+        onClick={() => setIsAnswered(true)}
+      >
+        Svar
+      </Button>
+      {isAnswered && (
+        <>
+          {chosenAlternatives.every((alternative) => alternative.correct) ? (
+            <div className='text-green-500'>Riktig!</div>
+          ) : (
+            <div className='text-red-500'>Feil!</div>
+          )}
+          <Button color='blue'>Neste</Button>
+        </>
+      )}
     </div>
   );
 };
