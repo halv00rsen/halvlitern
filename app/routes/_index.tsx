@@ -1,4 +1,6 @@
 import type { V2_MetaFunction } from "@remix-run/cloudflare";
+import { Link } from "@remix-run/react";
+import { Button } from "~/components/Button";
 
 export const meta: V2_MetaFunction = () => {
   return [{ title: "Halvlitern" }];
@@ -6,8 +8,8 @@ export const meta: V2_MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Halvlitern</h1>
-    </div>
+    <Link to='/veileder'>
+      <Button>Veileder</Button>
+    </Link>
   );
 }
