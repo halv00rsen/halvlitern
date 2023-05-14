@@ -8,8 +8,16 @@ export const meta: V2_MetaFunction = () => {
 
 export default function Index() {
   return (
-    <Link to='/veileder'>
-      <Button>Veileder</Button>
-    </Link>
+    <div className='grid gap-8 justify-items-center'>
+      <Link to='/veileder'>
+        <Button>Finn en bar</Button>
+      </Link>
+      <Link to='/registrer'>
+        <Button>Registrer besøk</Button>
+      </Link>
+      <Link to='/quiz' hidden>
+        <Button>Quiz</Button>
+      </Link>
+    </div>
   );
 }
